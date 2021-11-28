@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE LINK Website Launch</title>
+    <link rel="stylesheet" href="home.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>    
+    <div id="starter">
+        IEEE LINK Website Launch
+
+    </div>
+    <div id="scene">
+        <div id="curtain">
+            <div class="ground"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+    </div>
+</body>
+<script>
+document.body.addEventListener('onload', focus());
+document.addEventListener('keydown', detectSpaceKey);
+
+function detectSpaceKey(event)
+{
+	if(event.keyCode == 13) {
+		showTime();
+	}
+}
+
+function showTime()
+{
+	var curtain = document.getElementById("curtain");
+	curtain.className = "open";
+	
+	var scene = document.getElementById("scene");
+	scene.className = "expand";
+	
+	var starter = document.getElementById("starter");
+	starter.className = "fade-out";
+	
+	setTimeout(function() {
+        starter.style.display = 'none';
+        window.location.href = "video.html";
+    }, 4000);
+}
+</script>
+</html>
